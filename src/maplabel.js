@@ -49,6 +49,7 @@ window['MapLabel'] = MapLabel;
 /** @inheritDoc */
 MapLabel.prototype.changed = function(prop) {
   switch (prop) {
+    case 'id':
     case 'fontFamily':
     case 'fontSize':
     case 'fontColor':
@@ -106,6 +107,7 @@ MapLabel.prototype.drawCanvas_ = function() {
  */
 MapLabel.prototype.onAdd = function() {
   var canvas = this.canvas_ = document.createElement('canvas');
+  canvas.id = 'canvas_' + this.get('id');
   var style = canvas.style;
   style.position = 'absolute';
 
